@@ -1,0 +1,99 @@
+body {
+    margin:0;
+    padding:0;
+    font-family: "tempesta", verdana, sans-serif;
+    font-size:11px;
+    color:#2a2a2a;
+}
+
+.grey-text {
+    color:#888383;
+}
+
+#menu {
+    float:left;
+    position:relative;
+    height:600px;
+    width:200px;
+    padding-top:25px;
+}
+
+#menu-content {
+    position:absolute;
+    bottom:0;
+    left:0;
+}
+
+#menu  ul > li {
+    list-style:none;
+    padding:3px 0;
+}
+
+#menu  ul > li > a {
+    color:#2a2a2a;
+    text-decoration:none;
+}
+#menu  ul > li > a:hover, li > a:active {
+    background-color:none !important;
+    color:#888383;
+}
+
+#menu  ul > li.active > a {
+    background-color:transparent !important;
+    color:#888383 !important;
+}
+
+#content {
+    height:600px;
+    position:relative;
+    margin-left:210px;
+    padding:20px;
+    padding-bottom:45px;
+    border-left:1px solid #2a2a2a;
+}
+
+#container {
+    width:1030px;
+    margin:0 auto;
+}
+
+/* CAROUSEL *************************************/
+#carrousel{
+    position:relative;
+}
+#carrousel ul li{
+    position:absolute;
+    top:0;
+    left:0;
+    list-style-type:none;
+}
+
+#carrousel ul {
+    margin:0;
+    padding:0;
+}
+
+.controls span {
+    cursor:pointer;
+}
+
+/* CONTACT ************************************/
+#contact {
+    text-align:center;
+    margin-top:230px;
+}
+
+#contact-name {
+    font-size:36px;
+    letter-spacing:10px;
+}
+
+#contact-mail {
+    padding-top:24px;
+    font-size:24px
+}
+
+#contact-social {
+    font-size:30px;
+    padding-top:24px;
+}

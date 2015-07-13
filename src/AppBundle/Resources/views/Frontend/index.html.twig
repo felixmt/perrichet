@@ -1,0 +1,57 @@
+{# src/AppBundle/Resources/views/Frontend/index.html.twig #}
+
+{% extends "AppBundle::base_frontend.html.twig" %}
+
+{% block body  %}
+<section id="content">    
+    {% if gallery is defined %}
+    <div class="controls">
+        <span class="prev"><i class="fa fa-caret-left fa-2x"></i></span>
+        <span class="next"><i class="fa fa-caret-right fa-2x"></i></span>
+    </div>
+    <div id="carrousel">
+        <ul>
+        {% for name in content %}
+            <li><img src="{{ asset('uploads/' ~ gallery.folder ~ '/' ~ name) }}" style="height:600px" /></li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <div id="contact">
+    <div id="contact-name">LOUIS <span class="grey-text">PERRICHET</span></div>
+    <div id="contact-mail">- contact@louisperrichet.com -</div>
+    <div id="contact-social"><span style="padding-right:10px;"><i class="fa fa-linkedin"></i></span><i class="fa fa-instagram"></i></div>
+    
+    </div>
+    {% endif %}
+</section>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+$(document).keypress(function(e) {
+        if (e.keyCode == 39) {
+            nextSlide();
+        } else if (e.keyCode == 37) {
+            previousSlide();
+        }
+});
+
+var $carrousel = $('#carrousel'), // on cible le bloc du carrousel
+    $img = $('#carrousel img'), // on cible les images contenues dans le carrousel
+    indexImg = $img.length - 1, // on définit l'index du dernier élément
+    i = 0, // on initialise un compteur
+    $currentImg = $img.eq(i); // enfin, on cible l'image courante, qui possède l'index i (0 pour l'instant)
+    
+    $img.css('display', 'none'); // on cache les images
+    $currentImg.css('display', 'block'); // on affiche seulement l'image courante
+
+$('.next').click(function(){ // image suivante
+    nextSlide();
+});
+
+$('.prev').click(function(){ // image précédente
+    previousSlide();
+});
+</script>
+{% endblock %}
